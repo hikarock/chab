@@ -32,8 +32,7 @@ chab.js の仕組みを以下の図で説明します。
 
 Web SQL Database と Cross-document messaging に対応したウェブブラウザが必要です。
 
-* Google Chrome 6
-* Safari 5
+* Google Chrome 53.0 dev (64-bit) で動作確認済み
 
 ## サンプル
 
