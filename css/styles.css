@@ -35,6 +35,8 @@ textarea {
 }
 table {
   border-collapse: collapse;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 table caption {
   padding: 1em;
