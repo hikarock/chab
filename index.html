@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>chabjs.org &beta;</title>
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/css/reset-min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/fonts-min.css" />
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif&subset=latin' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+</head>
+<body>
+  <div id="main" class="sample">
+    <h2>chab.js sample</h2>
+    <div class="contents">
+      <p>サンプルとして用意したテーブルです。</p>
+      <ul>
+          <li><a href="/table/artist.html#artist">artist table (/table/artist.html#artist)</a></li>
+          <li><a href="/table/album.html#album">album table (/table/album.html#album)</a></li>
+          <li><a href="/table/history.html#history">history table (/table/history.html#history)</a></li>
+      </ul>
+      <p>ここにセレクト文をかいてね。</p>
+      <textarea id="sql">select
+     artist.name as アーティスト
+    ,album.title as タイトル
+    ,album.year as 年
+    ,history.event as できごと
+  from
+     http://chab.github.io/table/history.html#history as history
+    ,http://chab.github.io/table/album.html#album as album
+    ,http://chab.github.io/table/artist.html#artist as artist
+  where
+    album.year = history.year
+    and artist.artist_id = album.artist_id</textarea>
+      <p><a id="execute" class="button">実行</a></p>
+    </div>
+    <div id="chab"></div>
+  </div>
+  <script type="text/javascript" src="lib/latest/chab.js"></script>
+  <script type="text/javascript">
+  window.onload = function() {
+    var exec = document.getElementById("execute");
+    exec.onclick = function() {
+      var sql = document.getElementById("sql").value;
+      chab.select(sql);
+    }
+  };
+  </script>
+  <div id="footer">
+    <div class="contents">
+      <p>&copy; 2010-2016 <a href="https://hika69.com">hikarock</a></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
