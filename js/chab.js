@@ -63,7 +63,7 @@ var Chab;
                 });
               },
               function(e) {
-                alert(e.message);
+                console.error(e.message);
               },
               function() {
                 self.db.transaction(
@@ -73,7 +73,7 @@ var Chab;
                     }
                   },
                   function(e) {
-                    alert(e.message);
+                    console.error(e.message);
                   },
                   function() {
                     self.db.transaction(
@@ -110,7 +110,7 @@ var Chab;
                         );
                       },
                       function(e) {
-                        alert(e.message);
+                        console.error(e.message);
                       },
                       function() {
                         //
@@ -122,7 +122,7 @@ var Chab;
             );
           }
         } catch(e) {
-          alert(e.message);
+          console.error(e.message);
         }
       };
     },
