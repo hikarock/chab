@@ -34,6 +34,21 @@ textarea {
   padding: 1em;
   margin-bottom: 1em;
 }
+table {
+  border-collapse: collapse;
+}
+table caption {
+  padding: 1em;
+  font-weight: bold;
+}
+table th {
+  background-color: #FFDD00;
+}
+table td,
+table th {
+  padding: 0.4em;
+  border: 1px solid #333;
+}
 .main {
   border: 1px solid #333;
 }
