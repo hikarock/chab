@@ -5,9 +5,9 @@
  * MIT License https://hika69.mit-license.org/
  */
 var Chab;
-(function(){
+(function() {
   Chab = function() {
-    this.db = openDatabase("chabdb", "1.0");
+    this.db = openDatabase("chabdb", "1.0.1", "chab", 1024 * 1024);
     this.sql = "";
     var self = this;
     window.addEventListener("message", this.message(self), true);
@@ -26,7 +26,7 @@ var Chab;
         iframe.src = url;
         iframe.style.display = "none";
         body.appendChild(iframe);
-        iframe.addEventListener("load", function(){
+        iframe.addEventListener("load", function() {
             this.contentWindow.postMessage(hash, url);
         });
       })(url[i])
@@ -57,9 +57,9 @@ var Chab;
             self.sql = self.sql.replace(/(https?)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$%#]+\/*html#)(\W?)/g, "$3");
             self.db.transaction(
               function(tx) {
-                tx.executeSql(drop, [], function(){
+                tx.executeSql(drop, [], function() {
                   tx.executeSql(create);
-                }, function(){
+                }, function() {
                   tx.executeSql(create);
                 });
               },
@@ -80,7 +80,7 @@ var Chab;
                     self.db.transaction(
                       function(tx) {
                         tx.executeSql(
-                          self.sql, [], 
+                          self.sql, [],
                           function(tx, rs) {
                             var table = document.createElement("table");
                             for(var i = 0; i < rs.rows.length; i++) {
@@ -110,9 +110,12 @@ var Chab;
                           }
                         );
                       },
-                      function(e){
+                      function(e) {
                         alert(e.message);
-                      },{}
+                      },
+                      function() {
+                        //
+                      }
                     );
                   }
                 );
