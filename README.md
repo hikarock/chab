@@ -6,7 +6,7 @@ chab は Web SQL Database を使って HTML の &lt;table&gt; タグを SQL ラ�
 
 - &lt;table&gt; タグをそのままデータベースのテーブルとして利用できる
   - ドメインをまたがった &lt;table&gt; のセレクトも可能
-- HTML5 の API [Cross-document messaging](https://html.spec.whatwg.org/multipage/comms.html#web-messaging/) と[Web SQL Database](http://dev.w3.org/html5/webdatabase/) を使用
+- HTML5 の API [Cross-document messaging](https://html.spec.whatwg.org/multipage/comms.html#web-messaging/) と [Web SQL Database](http://dev.w3.org/html5/webdatabase/) を使用
 
 chab は以下のようなニーズに答えます。そのようなニーズが存在するかは置いといて。
 
