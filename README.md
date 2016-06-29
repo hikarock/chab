@@ -1,23 +1,19 @@
 # chab.js
 
-Web SQL Database を使ってテーブルタグを SQL ライクにセレクトする JavaScript ライブラリ
+chab.js は Web SQL Database を使って HTML のテーブルタグを SQL ライクにセレクトする JavaScript ライブラリです。
 
 ## 特徴
-
-chab.js は HTML のテーブルタグを SQL ライクにセレクトする JavaScript ライブラリです。
 
 - クライアントサイドで動作する JavaScript プログラム
 - HTML5 の API [Cross-document messaging](http://dev.w3.org/html5/postmsg/) と[Web SQL Database](http://dev.w3.org/html5/webdatabase/) を使用
 - ドメインをまたがったテーブルのセレクトが可能
 - HTML のテーブルタグをそのままデータベースのテーブルとして利用できる
 
-chab.jsは以下のようなニーズに対応します
+chab.js は以下のようなニーズに答えます。
 
-- Excel のように使える簡易データベースを HTML で作りたい
-- データベースの管理を単純にしたい
-- テーブルをテキストファイルで管理したい
-- テーブルをウェブ上で公開したい
-- リレーショナル・データベースを使用したいが、自由に使えるDBサーバーがない
+- Excel のように使える簡易データベースを作りたい
+- DB のテーブルをテキストファイルで管理したい
+- DB のテーブルをウェブ上で公開したい
 
 ## 仕組み
 
@@ -41,11 +37,7 @@ Web SQL Database と Cross-document messaging に対応したウェブブラウ�
 
 chab.js を設置済みのページと、サンプルとして3つのテーブルを用意しました。
 
-[chab.js で遊んでみる](/sample.html)
-
-* [artist table (http://chabjs.org/table/artist.html#artist)](/table/artist.html#artist)
-* [album table (http://chabjs.org/table/album.html#album)](/table/album.html#album)
-* [history table (http://chabjs.org/table/history.html#history)](/table/history.html#history)
+[デモ](https://hikarock.github.io/chab/)
 
 ## ライセンス
 
