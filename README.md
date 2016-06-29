@@ -23,7 +23,7 @@ chab.jsは以下のようなニーズに対応します
 
 chab.js の仕組みを以下の図で説明します。
 
-[![動作フロー]()]()
+[![動作フロー](https://hikarock.github.io/chab/img/overview.png)](https://hikarock.github.io/chab/img/overview.png)
 
 1. example.net/select.html のフォーム項目にSQLを入力し、実行ボタンを押す。実行ボタンをトリガーに chab.js の select メソッドが入力された SQL を取得して処理を開始する。
 2. SQL の FROM 句に指定された URL(example.com/artist.html と example.org/album.html) に Cross-document messaging でメッセージ(取得する対象のテーブル名)を送信する。メッセージ受信時のイベントは送信先 URL の HTML にリンクされている table.js で行う。
