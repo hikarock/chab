@@ -42,5 +42,5 @@ chab.js を設置済みのページと、サンプルとして3つのテーブ�
 
 ## ライセンス
 
-MIT License
+[MIT License](https://hika69.mit-license.org/)
 
