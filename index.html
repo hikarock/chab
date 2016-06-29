@@ -19,18 +19,20 @@
       </ul>
       <p>ここにSQLをかいてね。</p>
 
-<textarea id="sql">select
-     artist.name as アーティスト
-    ,album.title as タイトル
-    ,album.year as 年
-    ,history.event as できごと
-  from
-     https://hikarock.github.io/chab/table/history.html#history as history
-    ,https://hikarock.github.io/chab/table/album.html#album as album
-    ,https://hikarock.github.io/chab/table/artist.html#artist as artist
-  where
-    album.year = history.year
-    and artist.artist_id = album.artist_id</textarea>
+<textarea id="sql">
+SELECT
+  artist.name AS アーティスト,
+  album.title AS タイトル,
+  album.year AS 年,
+  history.event AS できごと
+FROM
+  https://hikarock.github.io/chab/table/history.html#history AS history,
+  https://hikarock.github.io/chab/table/album.html#album AS album,
+  https://hikarock.github.io/chab/table/artist.html#artist AS artist
+WHERE
+  album.year = history.year
+  AND artist.artist_id = album.artist_id
+</textarea>
 
       <p><a id="execute" class="button">実行</a></p>
 
