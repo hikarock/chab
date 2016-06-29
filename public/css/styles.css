@@ -3,7 +3,6 @@
 }
 body {
   letter-spacing: 1px;
-  padding: 24px;
 }
 h1 {
   padding-left: 1em;
@@ -47,9 +46,6 @@ table th {
 table td,
 table th {
   padding: 0.4em;
-  border: 1px solid #333;
-}
-.main {
   border: 1px solid #333;
 }
 .contents {
