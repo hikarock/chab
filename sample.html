@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>chabjs.org &beta;</title>
+<link rel="shortcut icon" href="./img/favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/reset-min.css" />
+<link rel="stylesheet" type="text/css" href="css/fonts-min.css" />
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif&subset=latin' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16254980-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+  <div id="main" class="sample">
+    <h2>chab.js sample</h2>
+    <div class="contents">
+      <p>サンプルとして用意したテーブルです。</p>
+      <ul>
+          <li><a href="table/artist.html#artist">artist table (http://chabjs.org/table/artist.html#artist)</a></li>
+          <li><a href="table/album.html#album">album table (http://chabjs.org/table/album.html#album)</a></li>
+          <li><a href="table/history.html#history">history table (http://chabjs.org/table/history.html#history)</a></li>
+      </ul>
+      <p>ここにセレクト文をかいてね。</p>
+      <textarea id="sql">select
+     artist.name as アーティスト
+    ,album.title as タイトル
+    ,album.year as 年
+    ,history.event as できごと
+  from
+     http://chabjs.org/table/history.html#history as history
+    ,http://chabjs.org/table/album.html#album as album
+    ,http://chabjs.org/table/artist.html#artist as artist
+  where
+    album.year = history.year
+    and artist.artist_id = album.artist_id</textarea>
+      <p><a id="execute" class="button">実行</a></p>
+    </div>
+    <div id="chab"></div>
+  </div>
+  <script type="text/javascript" src="lib/latest/chab.js"></script>
+  <script type="text/javascript">
+  window.onload = function() {
+      var exec = document.getElementById("execute");
+      exec.onclick = function() {
+          var sql = document.getElementById("sql").value;
+          chab.select(sql);
+      }
+  };
+  </script>
+  <div id="footer">
+    <div class="contents">
+      <p>&copy; 2010 <a href="http://blog.hika69.com">hikarock</a></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

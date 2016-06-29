@@ -1,4 +1,31 @@
-<?php require_once "header.php" ?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>chabjs.org &beta;</title>
+<link rel="shortcut icon" href="./img/favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/reset-min.css" />
+<link rel="stylesheet" type="text/css" href="css/fonts-min.css" />
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif&subset=latin' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16254980-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+<div id="contener">
+  <div id="header">
+    <h1><a href="/">chabjs.org <span class="beta">&beta;</span></a></h1>
+    <p>Web SQL Database を使ってテーブルタグを SQL ライクにセレクトする JavaScript ライブラリ</p>
+  </div>
+
   <div id="main" class="index">
     <h2 id="preface">はじめに</h2>
     <div class="contents">
@@ -39,7 +66,7 @@
     <h2 id="flow">仕組み</h2>
     <div class="contents">
       <p>chab.js の仕組みを以下の図で説明します。</p>
-      <a href="/img/flow.png"><img id="flow-img" src="/img/flow.png" alt="動作フロー" /></a>
+      <a href="img/flow.png"><img id="flow-img" src="img/flow.png" alt="動作フロー" /></a>
       <ol>
         <li>example.net/select.html のフォーム項目にSQLを入力し、実行ボタンを押す。<br />実行ボタンをトリガーに chab.js の select メソッドが入力された SQL を取得して処理を開始する。</li>
         <li>SQL の FROM 句に指定された URL(example.com/artist.html と example.org/album.html) に Cross-document messaging でメッセージ(取得する対象のテーブル名)を送信する。<br />メッセージ受信時のイベントは送信先 URL の HTML にリンクされている table.js で行う。</li>
@@ -58,7 +85,7 @@
     <h2 id="sample">サンプル</h2>
     <div class="contents">
       <p>chab.js を設置済みのページと、サンプルとして3つのテーブルを用意しました。</p>
-      <p><a href="/sample.php" class="button">chab.js で遊んでみる</a></p>
+      <p><a href="/sample.html" class="button">chab.js で遊んでみる</a></p>
       <ul>
         <li><a href="/table/artist.html#artist">artist table (http://chabjs.org/table/artist.html#artist)</a></li>
         <li><a href="/table/album.html#album">album table (http://chabjs.org/table/album.html#album)</a></li>
@@ -75,11 +102,14 @@
     <h2 id="license">ライセンス</h2>
     <div class="contents">
       <p>chab.js および table.js は MIT License で提供しています。</p>
-      <a href="/license.php">MIT License</a>
-    </div>
-    <h2 id="howtouse">使い方</h2>
-    <div class="contents">
-      コンテンツ作成中...
+      MIT License
     </div>
   </div>
-<?php require_once "footer.php" ?>
+  <div id="footer">
+    <div class="contents">
+      <p>&copy; 2010 <a href="http://blog.hika69.com">hikarock</a></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
