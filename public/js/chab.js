@@ -16,8 +16,7 @@ var Chab;
     select: function(sql) {
       var work = sql;
       this.sql = sql;
-      work = work.toLowerCase();
-      work = work.replace(/\s/g, " ");
+      work = work.toLowerCase().replace(/\s/g, " ");
       var url = work.match(/(https?)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$%#]+)/g);
       for (var i in url) (function(url) {
         var hash = url.split("#")[1] + "";
@@ -36,18 +35,18 @@ var Chab;
         try {
           var json = JSON.parse(ev.data);
           var insert = [];
-          for(var table in json) {
+          for (var table in json) {
             var row = json[table];
-            for(var j in row) {
+            for (var j in row) {
               col = row[j];
               var work = "INSERT INTO " + table;
               var names = "";
               var values = "";
-              for(var k in col) {
+              for (var k in col) {
                 names += k + ",";
                 values += "'" + col[k] + "',";
               }
-              names = self.deleteTrailingChar(names, 1);
+              names  = self.deleteTrailingChar(names,  1);
               values = self.deleteTrailingChar(values, 1);
               work += " (" + names + ") " +  "VALUES (" + values + ");";
               insert.push(work);
@@ -83,11 +82,11 @@ var Chab;
                           self.sql, [],
                           function(tx, rs) {
                             var table = document.createElement("table");
-                            for(var i = 0; i < rs.rows.length; i++) {
+                            for (var i = 0; i < rs.rows.length; i++) {
                               var tr = document.createElement("tr");
                               var row = rs.rows.item(i);
                               if (i == 0) {
-                                for(j in row) {
+                                for (j in row) {
                                   var th = document.createElement("th");
                                   th.appendChild(document.createTextNode(j));
                                   tr.appendChild(th);
@@ -95,7 +94,7 @@ var Chab;
                                 table.appendChild(tr)
                                 tr = document.createElement("tr");
                               }
-                              for(k in row) {
+                              for (k in row) {
                                 var td = document.createElement("td");
                                 td.appendChild(document.createTextNode(row[k]));
                                 tr.appendChild(td);
